@@ -1,0 +1,26 @@
+@R1
+D=M // D=R1
+@R2
+M=M-D // R2=R2-R1
+D=M // D=R2-R1
+@GREATER
+D;JGT // R2-R1>0 ==> R2>R1
+@R1
+D=M // D=R1
+@SET
+0;JMP
+(GREATER)
+@R1
+D=D+M //D=R1+R2-R1 ==> D=R2
+@R2
+M=D
+@SET
+0;JMP
+(SET)
+@R0
+M=D
+@END
+0;JMP
+(END)
+@END
+0;JMP
